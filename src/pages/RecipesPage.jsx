@@ -1,4 +1,4 @@
-export default function RecipesPage() {
+export default function Recipes() {
     return (
         <section className="page">
             <div className="container">
