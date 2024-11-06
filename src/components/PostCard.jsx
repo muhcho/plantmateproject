@@ -21,7 +21,7 @@ export default function PostCard({ post }) {
       <div className="post-card-content">
         <h3>{post.name}</h3>
         <div className="post-card-bottom">
-          <UserAvatar uid={post.username} />
+         
           <span className="username">@{post.username}</span>
           <div className="post-card-likes">
             <svg className="heart-icon" viewBox="0 0 24 24">

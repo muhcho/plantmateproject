@@ -272,18 +272,40 @@ nav a.active::before {
 }
 
 /* ---------- Post Card Styling ---------- */
-.post-card {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-  background-color: var(--white);
+.recommended-section .recommended-post-card {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.recommended-section .post-card {
+  width: 100%; /* Ensure full width */
+  max-width: 600px; /* Adjust to control size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
   border-radius: 15px;
-  overflow: hidden;
+}
+
+.post-grid {
+  display: flex;
+  gap: 15px; /* Space between post cards */
+  overflow-x: auto; /* Horizontal scrolling */
+  padding: 10px 0;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.post-card {
+  flex: 0 0 auto; /* Prevent shrinking and align horizontally */
+  width: 230px; /* Adjust width for smaller cards */
+  border-radius: 15px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
-  position: relative;
+  overflow: hidden;
+}
+.post-grid::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
 
 .post-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .post-card-image-container {
@@ -317,14 +339,14 @@ nav a.active::before {
 }
 
 .post-card-content {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .post-card-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 0.1rem;
 }
 
 .username {
@@ -459,4 +481,124 @@ nav a.active::before {
 .header-logo {
   width: 80px; /* Adjust size for the logo to make it smaller */
   height: auto;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #E8E5DD; /* Light background color */
+  border-radius: 20px; /* Rounded corners to match design */
+  padding: 8px 12px; /* Spacing inside */
+  box-shadow: none; /* Remove shadow */
+  border: none; /* No border */
+  width: 100%; /* Full width */
+  margin-bottom: 20px; /* Add some spacing below */
+}
+
+.search-bar input {
+  flex: 1;
+  border: none; /* No border */
+  background: none;
+  font-size: 1rem;
+  outline: none; /* Remove default outline */
+  color: #3B3B3B; /* Dark text color */
+  padding: 0 10px; /* Padding for text spacing */
+}
+
+.search-bar input::placeholder {
+  color: #6B6B6B; /* Slightly lighter placeholder color */
+}
+
+.icon-left,
+.icon-right {
+  width: 20px;
+  height: 20px;
+  fill: #103B28; /* Dark green */
+}
+
+.icon-left {
+  margin-right: 8px; /* Adjust space between icon and input */
+}
+
+.icon-right {
+  margin-left: 8px; /* Adjust space between input and icon */
+}
+
+.user-section {
+  display: flex;
+  align-items: center; /* Align icon at the top */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bison-section {
+  display: flex;
+  align-items: center; /* Aligns the bison and text bubble in the center */
+  gap: 25px; /* Adds space between the icon and the text bubble */
+  margin-bottom: 20px; /* Adds space below the bison section */
+}
+
+.bison-icon {
+  width: 60px; /* Adjusted size for larger icon */
+  height: auto;
+}
+
+.text-bubble {
+  background-color: #E8E5DD; /* Light background */
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--dark-green);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  max-width: 250px;
+  position: relative; /* Position relative to allow pseudo-element */
+  text-align: left; /* Align text to the left */
+}
+
+
+.text-bubble::before {
+  content: "";
+  position: absolute;
+  left: -12px; /* Position arrow closer to the icon */
+  top: 50%; /* Center arrow vertically */
+  transform: translateY(-50%); /* Adjust vertical centering */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0; /* Create an arrow */
+  border-color: transparent #E8E5DD transparent transparent; /* Arrow color */
+
+}
+
+.tag-section {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  overflow-x: auto; /* Horizontal scroll */
+  padding: 8px 0; /* Padding around the section */
+  margin-bottom: 20px; /* Margin for spacing */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.tag-section::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome/Safari/Edge */
+}
+
+.tag-button {
+  background-color: var(--off-white);
+  border: 1px solid var(--dark-green); /* Thicker border for better definition */
+  border-radius: 25px; /* Rounded button */
+  padding: 6px 18px; /* Adjusted padding */
+  font-size: 1rem; /* Adjust font size */
+  color: var(--dark-green);
+  cursor: pointer;
+  white-space: nowrap; /* Prevent line break */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between emoji and text */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.tag-button:hover {
+  background-color: var(--dark-green);
+  color: var(--off-white);
 }
