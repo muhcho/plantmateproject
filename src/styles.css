@@ -5,7 +5,7 @@
   --light-green: rgb(247, 244, 237, 1);
   --light-grey: #f1f1f4;
   --text-color-danger: #f44250;
-  --text-color-dark: #333;
+  --green: #B3D952;
   --text-color-light: #f1f1f1;
   --white: #f1f1f1;
 }
@@ -602,3 +602,348 @@ nav a.active::before {
   background-color: var(--dark-green);
   color: var(--off-white);
 }
+
+/* Community Page Wrapper */
+.community-page {
+
+  background-color: var(--light-green);
+  padding: 20px;
+  padding-top: 60px;
+  
+}
+
+/* User Section */
+.community-page .user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.community-page .user-section h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.community-page .user-section p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b6b6b; /* Slightly lighter for better hierarchy */
+}
+
+.community-page .user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Post Image Container */
+.community-page .post-image-container {
+  width: 100%; /* Full width of the container */
+  height: 400px; /* Set a fixed height */
+  overflow: hidden; /* Prevent overflow of the image */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  position: relative;
+}
+
+.community-page .post-image {
+  width: 100%; /* Ensure image takes full width */
+  height: 100%; /* Ensure image takes full height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  position: absolute; /* Ensure the image is positioned inside the container */
+}
+
+/* Post Labels */
+.community-page .post-labels {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.community-page .type-of-meal,
+.community-page .time-to-cook {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  color: var(--dark-green);
+}
+
+/* Post Actions */
+.community-page .post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.community-page .likes-comments {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.community-page .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.community-page .save-icon {
+  cursor: pointer;
+  width: 28px; /* Increase width */
+  height: 28px; /* Increase height */
+  transition: transform 0.2s ease-in-out; /* Add smooth animation on click */
+}
+
+.community-post .save-icon:active {
+  transform: scale(0.9); /* Add subtle click effect */
+}
+
+/* Post Description */
+.community-page .post-description {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+
+.community-post {
+  margin-bottom: 15px;
+  padding-bottom: 15px; /* Add padding for space before line */
+  border-bottom: 1px solid #ddd; /* Light gray separator line */
+}
+
+/* Scoped CommunityPage Styles */
+.community-page .search-bar {
+  margin-bottom: 20px; /* Add spacing below the search bar */
+}
+
+.community-page .tag-section {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0px 0;
+  margin-bottom: 20px;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.community-page .tag-section::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.community-page .tag-button {
+  background-color: var(--off-white);
+  border: 1px solid var(--dark-green);
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-size: 1rem;
+  color: var(--dark-green);
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.community-page .tag-button.active {
+  background-color: var(--dark-green);
+  color: var(--off-white);
+}
+
+.community-page .tag-button:hover {
+  background-color: var(--dark-green);
+  color: var(--off-white);
+}
+
+.fab {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--green);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.fab img {
+  width: 30px;
+  height: 30px;
+}
+
+.fab:hover {
+  background-color: var(--dark-green); /* Optional hover color */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.fab:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+
+/* ---------- Create Page Styling ---------- */
+.create-page {
+  padding: 20px;
+  background-color: var(--light-green);
+  min-height: 100vh;
+  padding-top: 60px; /* Avoid overlap with the header */
+  position: relative;
+  height: 100vh; /* Full viewport height */
+}
+
+.content-container {
+  flex: 1; /* Takes up remaining space */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 20px; /* Add padding around the scrollable content */
+}
+
+.create-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.create-page .header img {
+  width: 20px; /* Smaller back icon */
+  cursor: pointer;
+}
+
+.create-page h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--dark-green);
+  text-align: center;
+}
+
+.create-page input[type="text"],
+.create-page textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--dark-green);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Tag Sections Styling */
+.meal-section,
+.time-section {
+  margin: 20px 0;
+}
+
+.meal-section img,
+.time-section img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.meal-section p,
+.time-section p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--dark-green);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Tags Styling */
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags button {
+  background-color: var(--off-white);
+  border: 1px solid var(--dark-green);
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: var(--dark-green);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tags button.active {
+  background-color: var(--dark-green);
+  color: var(--off-white);
+}
+
+.tags button:hover {
+  background-color: var(--dark-green);
+  color: var(--off-white);
+}
+
+/* Fixed Share Button */
+.share-button {
+  background-color: #a3d977; /* Green background */
+  color: #000; /* Text color */
+  width: calc(100% - 40px); /* Full width minus padding */
+  max-width: 600px; /* Optional, limit for very large screens */
+  padding: 15px; /* Vertical padding */
+  margin: 10px 0px; /* Center with left/right margin */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1.2em; /* Slightly larger text */
+  position: fixed; /* Fix button at the bottom */
+  bottom: 10px; /* Distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center correction */
+  z-index: 1000; /* Ensure it's above all elements */
+  text-align: center; /* Center text */
+  opacity: 1; /* Always visible */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.share-button:hover {
+  background-color: #8cbf65;
+}
+
+.create-page textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Hide Navigation if Present */
+.create-page. nav {
+  display: none !important;
+}
+
+.post-preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Add spacing below image preview */
+}
+
+.post-preview {
+  width: 100%; /* Full width relative to the container */
+  max-width: 250px; /* Limit the maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for styling */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional light shadow */
+}
+
+.image-input {
+  margin-bottom: 10px; /* Space below the input field */
+}
+
+.description-input {
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  margin-bottom: 20px;
+}
+
+
