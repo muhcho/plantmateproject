@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import PostCard from "../components/PostCard";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function PostDetailPage() {
   const { id } = useParams();
@@ -8,71 +7,56 @@ export default function PostDetailPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function getPost() {
+    async function fetchPost() {
       try {
         const response = await fetch(
           `https://plant-mate-9bee8-default-rtdb.firebaseio.com/recipes/${id}.json`
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch post data");
-        }
         const data = await response.json();
         setPost(data);
       } catch (error) {
-        console.error("Error fetching post data:", error);
+        console.error("Failed to fetch post data:", error);
       }
     }
 
-    getPost();
+    fetchPost();
   }, [id]);
 
-  async function handleDelete() {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this post?"
-    );
+  if (!post) return <p>Loading...</p>;
 
-    if (!confirmDelete) {
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        `https://plant-mate-9bee8-default-rtdb.firebaseio.com/recipes/${id}.json`,
-        {
-          method: "DELETE"
-        }
-      );
-
-      if (response.ok) {
-        navigate("/");
-      } else {
-        throw new Error("Failed to delete post");
-      }
-    } catch (error) {
-      console.error("Error deleting post:", error);
-    }
-  }
-
-  if (!post) {
-    return <p>Loading...</p>;
-  }
+  // Calculate Prep Time and Cook Time dynamically based on Total Time
+  const totalTime = parseInt(post.timeToPrepare, 10) || 0;
+  const prepTime = Math.floor(totalTime * 0.4); // 40% prep time
+  const cookTime = totalTime - prepTime;
 
   return (
-    <section className="page" id="post-page">
-      <div className="container">
-        <h1>{post.name}</h1>
-        <img src={post.image} alt={post.name} className="post-image" />
-        <p><strong>By:</strong> {post.username}</p>
-        <p><strong>Description:</strong> {post.shortDescription}</p>
-        <p><strong>Meal Type:</strong> {post.mealType}</p>
-        <p><strong>Time to Prepare:</strong> {post.timeToPrepare}</p>
-        <div className="btns">
-          <button className="btn-cancel" onClick={handleDelete}>
-            Delete Post
-          </button>
-          <button className="btn">Update Post</button>
-        </div>
+    <section className="post-detail-page-unique">
+      {/* Back Button */}
+      <button className="back-button-unique" onClick={() => navigate(-1)}>
+        &larr; Back
+      </button>
+
+      {/* Header Section */}
+      <div className="header-section-unique">
+        <img src={post.image} alt={post.name} className="header-image-unique" />
+        <h1 className="post-title-unique">{post.name}</h1>
       </div>
+
+      {/* Preparation Times */}
+      <section className="prep-times-unique">
+        <div>
+          <h3>Total Time</h3>
+          <p>{totalTime} min</p>
+        </div>
+        <div>
+          <h3>Prep Time</h3>
+          <p>{prepTime} min</p>
+        </div>
+        <div>
+          <h3>Cook Time</h3>
+          <p>{cookTime} min</p>
+        </div>
+      </section>
     </section>
   );
 }

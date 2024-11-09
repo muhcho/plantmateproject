@@ -1230,3 +1230,154 @@ input, select, textarea {
   margin-top: 20px;
 }
 
+.post-detail-page {
+  padding: 1rem;
+}
+
+.recipe-header {
+  position: relative;
+  text-align: center;
+}
+
+.header-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.recipe-title {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.others-section {
+  margin-top: 1rem;
+}
+
+.others-gallery {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: scroll;
+}
+
+.time-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.toggle button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.toggle .active {
+  background: #8bc34a;
+  color: white;
+}
+
+.ingredients-section, .instructions-section {
+  margin-top: 1rem;
+}
+
+.grocery-button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: #8bc34a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* PostDetailPage-specific styles */
+.post-detail-page-unique {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #fdfdfd;
+  padding-bottom: 80px; /* Add space at the bottom to avoid navigation overlap */
+}
+
+.back-button-unique {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.header-section-unique {
+  position: relative;
+  text-align: center;
+}
+
+.header-image-unique {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post-title-unique {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.prep-times-unique {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.prep-times-unique div {
+  text-align: center;
+}
+
+.prep-times-unique h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.prep-times-unique p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Ensure the bottom content doesn't overlap with the navigation */
+.post-detail-page-unique {
+  margin-bottom: 80px; /* Adjust for fixed navigation height */
+}
