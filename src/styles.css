@@ -947,3 +947,245 @@ nav a.active::before {
 }
 
 
+.community-post {
+  border-bottom: 1px solid #ddd; /* Separator between posts */
+  padding: 10px 0;
+}
+
+.user-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.posted-ago {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.dots-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.post-image-container {
+  position: relative;
+  margin-top: 10px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.post-labels {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.type-of-meal,
+.time-to-cook {
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.likes-comments {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.save-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.post-description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Post Details Page Styling ---------- */
+.post-details-page {
+  padding: 20px;
+  background-color: var(--off-white);
+  margin-top: 60px;
+}
+
+.post-details-page .post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.post-details-page .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-details-page .user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-details-page h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+
+.post-details-page .post-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.post-details-page .post-metadata {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.post-details-page .type-of-meal,
+.post-details-page .time-to-cook {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.post-details-page .user-info,
+.post-details-page .time-to-cook {
+  padding: 5px 10px;
+}
+
+/* ---------- Buttons Styling ---------- */
+.post-details-page .action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.post-details-page .edit-button,
+.post-details-page .delete-button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 45%;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.post-details-page .edit-button {
+  background-color: #103B28; /* Light green */
+  border: 1px solid #a3da67;
+  color: #ffffff;
+}
+
+.post-details-page .edit-button:hover {
+  background-color: #B3D952; /* Darker green on hover */
+}
+
+.post-details-page .delete-button {
+  background-color: #FF2352;
+  border: 1px solid #ff7a7a;
+  color: #ffffff;
+}
+
+.post-details-page .delete-button:hover {
+  background-color: #F7F4ED; /* Lighter red on hover */
+  color: #FF2352;
+}
+
+.update-page {
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.image-preview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}

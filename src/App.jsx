@@ -9,6 +9,9 @@ import PlannerPage from "./pages/PlannerPage";
 import CommunityPage from "./pages/CommunityPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import AccountPage from "./pages/AccountPage";
+import PostDetailsPage from "./pages/PostDetailsPage"; 
+import UpdatePage from "./pages/UpdatePage";
+
 
 function App() {
   return (
@@ -22,9 +25,11 @@ function App() {
           <Route path="/recipes" element={<RecipesPage />} />
           <Route path="/planner" element={<PlannerPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/edit/:id" element={<UpdatePage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/posts/:id" element={<PostDetailPage />} />
+          <Route path="/community/:id" element={<PostDetailsPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CommunityPost from "../components/CommunityPost";
-import SearchBar from "../components/SearchBar"; 
+import SearchBar from "../components/SearchBar";
 import AddPlusIcon from "../assets/addplus.svg";
 
 export default function CommunityPage() {
   const [posts, setPosts] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]); 
-  const [activeTag, setActiveTag] = useState("All"); 
-  const [searchQuery, setSearchQuery] = useState(""); 
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [activeTag, setActiveTag] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   const tags = ["All", "Breakfast", "Lunch", "Dinner", "Snack"];
@@ -27,7 +27,7 @@ export default function CommunityPage() {
         }));
 
         setPosts(postsArray);
-        setFilteredPosts(postsArray); 
+        setFilteredPosts(postsArray); // Initialize with all posts
       } catch (error) {
         console.error("Failed to fetch posts", error);
       }
@@ -56,8 +56,10 @@ export default function CommunityPage() {
     }
 
     if (query) {
-      filtered = filtered.filter((post) =>
-        post.title.toLowerCase().includes(query.toLowerCase())
+      filtered = filtered.filter(
+        (post) =>
+          post.title.toLowerCase().includes(query.toLowerCase()) ||
+          post.shortDescription.toLowerCase().includes(query.toLowerCase())
       );
     }
 
@@ -67,7 +69,10 @@ export default function CommunityPage() {
   return (
     <section className="community-page">
       {/* Search Bar */}
-      <SearchBar placeholder="Find a friend" onSearch={handleSearch} />
+      <SearchBar
+        placeholder="Discover your next meal"
+        onSearch={handleSearch} // Pass the search query to the handler
+      />
 
       {/* Tag Section */}
       <div className="tag-section">
