@@ -896,28 +896,32 @@ nav a.active::before {
 
 /* Fixed Share Button */
 .share-button {
-  background-color: #a3d977; /* Green background */
-  color: #000; /* Text color */
-  width: calc(100% - 40px); /* Full width minus padding */
-  max-width: 600px; /* Optional, limit for very large screens */
-  padding: 15px; /* Vertical padding */
-  margin: 10px 0px; /* Center with left/right margin */
+  background-color: #a3d977;
+  color: #000;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  padding: 15px;
+  margin: 10px 0;
   border: none;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 1.2em; /* Slightly larger text */
+  font-size: 1.2em;
   position: fixed; /* Fix button at the bottom */
-  bottom: 10px; /* Distance from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center correction */
-  z-index: 1000; /* Ensure it's above all elements */
-  text-align: center; /* Center text */
-  opacity: 1; /* Always visible */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  text-align: center;
+  opacity: 1;
+  transition: background-color 0.3s ease;
 }
 
 .share-button:hover {
   background-color: #8cbf65;
+}
+
+.share-button:active {
+  transform: translate(-50%, 1px); /* Click effect without breaking alignment */
 }
 
 .create-page textarea {
