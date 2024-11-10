@@ -2,14 +2,21 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SaveIcon from "../assets/save_icon.svg";
 import SaveFilledIcon from "../assets/save_filled_icon.svg";
+import LoveIcon from "../assets/loveicon.svg";
+import LikeFilledIcon from "../assets/like_filled_icon.svg";
 
 export default function PostCard({ post }) {
   const navigate = useNavigate();
   const [isSaved, setIsSaved] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(post.likes || 0);
 
   useEffect(() => {
     const savedPosts = JSON.parse(localStorage.getItem("favorites")) || [];
     setIsSaved(savedPosts.some((savedPost) => savedPost.id === post.id));
+
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts")) || [];
+    setIsLiked(likedPosts.some((likedPost) => likedPost.id === post.id));
   }, [post.id]);
 
   const handleSavePost = (e) => {
@@ -27,6 +34,23 @@ export default function PostCard({ post }) {
     setIsSaved(!isSaved);
   };
 
+  const handleLikePost = (e) => {
+    e.stopPropagation(); // Prevent navigation
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts")) || [];
+
+    if (isLiked) {
+      const updatedPosts = likedPosts.filter((likedPost) => likedPost.id !== post.id);
+      localStorage.setItem("likedPosts", JSON.stringify(updatedPosts));
+      setLikeCount(likeCount - 1); // Decrement like count
+    } else {
+      likedPosts.push(post);
+      localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+      setLikeCount(likeCount + 1); // Increment like count
+    }
+
+    setIsLiked(!isLiked);
+  };
+
   return (
     <article className="post-card" onClick={() => navigate(`/posts/${post.id}`)}>
       <div className="post-card-image-container">
@@ -41,10 +65,13 @@ export default function PostCard({ post }) {
         <div className="post-card-bottom">
           <span className="username">@{post.username}</span>
           <div className="post-card-likes">
-            <svg className="heart-icon" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
-            </svg>
-            <span>200</span>
+            <img
+              src={isLiked ? LikeFilledIcon : LoveIcon}
+              alt="Like Icon"
+              className="like-icon"
+              onClick={handleLikePost}
+            />
+            <span>{likeCount}</span>
           </div>
           <img
             src={isSaved ? SaveFilledIcon : SaveIcon}
