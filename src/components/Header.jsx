@@ -1,3 +1,4 @@
+/* Made by Mihaela Ninova*/
 import React from 'react';
 import QRIcon from '../assets/qrcode-scan.svg';
 import AvatarIcon from '../assets/avatar_bison.svg';

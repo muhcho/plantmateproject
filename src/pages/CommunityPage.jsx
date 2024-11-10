@@ -1,3 +1,5 @@
+/* Made by Mihaela Ninova */
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CommunityPost from "../components/CommunityPost";

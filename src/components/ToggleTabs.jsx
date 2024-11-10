@@ -1,3 +1,4 @@
+/* Made by Ralitsa Lyubcheva */
 import React from "react";
 import PropTypes from "prop-types";
 

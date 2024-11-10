@@ -1,3 +1,4 @@
+/* Made by Mihaela Ninova */
 import { NavLink } from "react-router-dom";
 import HomeIcon from "../assets/home_menu_icon.svg";
 import PlannerIcon from "../assets/planner_menu_icon.svg";

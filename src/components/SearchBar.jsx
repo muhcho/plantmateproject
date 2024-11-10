@@ -1,3 +1,4 @@
+/* Made by Ralitsa Lyubcheva */
 import MagnifyingGlassIcon from "../assets/magnifyingglass.svg";
 import MicrophoneIcon from "../assets/microphone.svg";
 

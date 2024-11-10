@@ -1,3 +1,4 @@
+/* Made by Mihaela Ninova */
 // src/utils/likeManager.js
 
 export const toggleLike = async (postId, currentLikes) => {

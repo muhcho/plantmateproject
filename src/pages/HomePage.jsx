@@ -1,3 +1,4 @@
+/* Made by Ralitsa Lyubcheva */
 import { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
 import SearchBar from "../components/SearchBar"; 
