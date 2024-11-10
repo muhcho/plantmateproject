@@ -11,6 +11,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import AccountPage from "./pages/AccountPage";
 import PostDetailsPage from "./pages/PostDetailsPage"; // Different from PostDetailPage
 import UpdatePage from "./pages/UpdatePage";
+import GroceryPage from "./pages/GroceryPage";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
 
           {/* Planner */}
           <Route path="/planner" element={<PlannerPage />} />
+
+          {/* Grocery */}
+          <Route path="/grocery" element={<GroceryPage />} />
 
           {/* Community */}
           <Route path="/community" element={<CommunityPage />} />
